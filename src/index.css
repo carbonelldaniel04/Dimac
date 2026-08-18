@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  
+  --color-bg-primary: #0A0A0A;
+  --color-bg-secondary: #0D0D0D;
+  --color-accent: #9A8471;
+  --color-border-main: #222222;
+  --color-border-outer: #1A1A1A;
+  --color-walnut: #4E342E;
+  --color-pastel-blue: #A7C7E7;
+  --color-pastel-red: #F4C2C2;
+}
+
+@layer base {
+  body {
+    @apply bg-bg-primary text-white font-sans selection:bg-accent/30 selection:text-white;
+  }
+}
+
+.architect-border {
+  @apply border border-border-main;
+}
+
+.wood-gradient {
+  background: linear-gradient(135deg, #2b1d12 0%, #0A0A0A 100%);
+}
+
+.glass-morphism {
+  @apply backdrop-blur-md bg-white/5 border border-white/10;
+}
+
+.text-accent {
+  @apply text-accent;
+}
+
+.outer-frame {
+  @apply border-8 border-border-outer min-h-screen flex flex-col md:flex-row;
+}

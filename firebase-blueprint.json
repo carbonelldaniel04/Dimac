@@ -1,0 +1,89 @@
+{
+  "entities": {
+    "Project": {
+      "title": "Project",
+      "description": "An architectural project showcase.",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "location": { "type": "string" },
+        "category": { "type": "string" },
+        "image": { "type": "string" },
+        "description": { "type": "string" },
+        "order": { "type": "number" }
+      },
+      "required": ["title", "location", "category", "image"]
+    },
+    "Service": {
+      "title": "Service",
+      "description": "A service offered by the studio.",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "description": { "type": "string" },
+        "icon": { "type": "string" },
+        "order": { "type": "number" }
+      },
+      "required": ["title", "description", "icon"]
+    },
+    "ContactMessage": {
+      "title": "Contact Message",
+      "description": "A message from a potential client.",
+      "type": "object",
+      "properties": {
+        "firstName": { "type": "string" },
+        "lastName": { "type": "string" },
+        "email": { "type": "string" },
+        "message": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["firstName", "email", "message"]
+    },
+    "Booking": {
+      "title": "Booking",
+      "description": "A scheduled consultation.",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "email": { "type": "string" },
+        "date": { "type": "string" },
+        "time": { "type": "string" },
+        "purpose": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["name", "email", "date", "time"]
+    },
+    "User": {
+      "title": "User",
+      "description": "System user with role.",
+      "type": "object",
+      "properties": {
+        "email": { "type": "string" },
+        "role": { "type": "string", "enum": ["admin", "editor"] }
+      },
+      "required": ["email", "role"]
+    }
+  },
+  "firestore": {
+    "projects": {
+      "schema": "Project",
+      "description": "List of architectural projects."
+    },
+    "services": {
+      "schema": "Service",
+      "description": "List of services offered."
+    },
+    "contact_messages": {
+      "schema": "ContactMessage",
+      "description": "Messages from the contact form."
+    },
+    "bookings": {
+      "schema": "Booking",
+      "description": "Appointments scheduled by users."
+    },
+    "users": {
+      "schema": "User",
+      "description": "User roles and permissions."
+    }
+  }
+}
